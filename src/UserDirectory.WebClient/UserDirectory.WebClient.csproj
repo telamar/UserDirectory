@@ -2,9 +2,14 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <SpaRootPath>src\</SpaRootPath>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="$(SpaRootPath)**" />
+    <None Include="$(SpaRootPath)**" Exclude="$(SpaRootPath)node_modules\**" />
   </ItemGroup>
 </Project>

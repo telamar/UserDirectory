@@ -6,8 +6,14 @@ namespace UserDirectory.WebClient
 {
     public class Startup
     {
+        private const string SpaFilePath = "src";
+
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = SpaFilePath;
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -16,6 +22,14 @@ namespace UserDirectory.WebClient
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
+
+            app.UseSpa(spaBuilder =>
+            {
+                spaBuilder.Options.SourcePath = SpaFilePath;
+            });
         }
     }
 }
