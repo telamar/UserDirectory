@@ -9,6 +9,12 @@ namespace UserDirectory.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Role> builder)
         {
             builder.HasKey(entity => entity.Id);
+
+            builder
+                .HasOne(entity => entity.Group)
+                .WithMany(relatedEntity => relatedEntity.Roles)
+                .HasForeignKey(entity => entity.GroupId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

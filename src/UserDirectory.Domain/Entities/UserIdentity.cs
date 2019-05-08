@@ -12,8 +12,6 @@ namespace UserDirectory.Domain.Entities
 
         public int Id { get; set; }
 
-        public int UserDetailsId { get; set; }
-
         public UserDetails UserDetails { get; set; }
 
         public ICollection<UserIdentityGroup> UserIdentityGroups { get; }
