@@ -3,7 +3,7 @@ using UserDirectory.Application.Interfaces.Adapters;
 
 namespace UserDirectory.Infrastructure.Adapters
 {
-    internal class StopWatchAdapter : IStopWatchAdapter
+    public class StopWatchAdapter : IStopWatchAdapter
     {
         private readonly Stopwatch stopwatch;
 

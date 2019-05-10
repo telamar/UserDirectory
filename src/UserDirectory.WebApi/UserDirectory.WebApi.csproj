@@ -8,6 +8,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UserDirectory.Infrastructure\UserDirectory.Infrastructure.csproj" />
     <ProjectReference Include="..\UserDirectory.Persistence\UserDirectory.Persistence.csproj" />
   </ItemGroup>
 </Project>

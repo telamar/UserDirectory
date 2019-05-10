@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using UserDirectory.Domain.Entities;
 
 namespace UserDirectory.Application.Interfaces
@@ -16,5 +18,7 @@ namespace UserDirectory.Application.Interfaces
         DbSet<UserIdentityGroup> UserIdentityGroups { get; }
 
         DbSet<UserIdentityRole> UserIdentityRoles { get; }
+
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
     }
 }
