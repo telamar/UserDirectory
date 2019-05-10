@@ -6,6 +6,11 @@ namespace UserDirectory.Persistence
 {
     public class UserDirectoryDbContext : DbContext, IUserDirectoryDbContext
     {
+        public UserDirectoryDbContext(DbContextOptions<UserDirectoryDbContext> options)
+            : base(options)
+        {
+        }
+
         public DbSet<Group> Groups { get; set; }
 
         public DbSet<Role> Roles { get; set; }
